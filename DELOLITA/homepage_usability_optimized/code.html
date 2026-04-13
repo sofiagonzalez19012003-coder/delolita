@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>De Lolita Café - Nutrir Almas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#755d5f",
+                        "primary": "#714428",
+                        "on-surface-variant": "#51443d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#efe7d9",
+                        "inverse-surface": "#343026",
+                        "on-secondary-fixed-variant": "#574144",
+                        "on-surface": "#1e1b13",
+                        "surface-tint": "#835336",
+                        "on-primary-fixed": "#331200",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fff8ef",
+                        "surface-container-highest": "#e9e2d3",
+                        "tertiary-fixed-dim": "#e3beb8",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#f8d8db",
+                        "tertiary": "#634844",
+                        "on-primary-fixed-variant": "#683c21",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#70585b",
+                        "surface-container-low": "#fbf3e4",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#ffdfd9",
+                        "on-background": "#1e1b13",
+                        "primary-container": "#8d5b3e",
+                        "surface": "#fff8ef",
+                        "inverse-primary": "#f8b895",
+                        "outline": "#84746c",
+                        "surface-container": "#f5edde",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e9e2d3",
+                        "background": "#fff8ef",
+                        "secondary-fixed": "#fbdbde",
+                        "on-primary-container": "#ffe0d1",
+                        "on-secondary-fixed": "#281719",
+                        "tertiary-fixed": "#ffdad4",
+                        "inverse-on-surface": "#f8f0e1",
+                        "outline-variant": "#d6c3b9",
+                        "surface-dim": "#e1d9cb",
+                        "tertiary-container": "#7d605b",
+                        "primary-fixed-dim": "#f8b895",
+                        "primary-fixed": "#ffdbc9",
+                        "secondary-fixed-dim": "#debfc2",
+                        "on-tertiary-fixed": "#2b1613",
+                        "on-tertiary-fixed-variant": "#5b403c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-italic { font-family: 'Noto Serif', serif; font-style: italic; }
+        .plus-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .nav-link-active { border-bottom: 2px solid #714428; color: #714428; font-weight: 700; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Progress Indicator Animation */
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .hero-progress { animation: progress 5s linear infinite; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-stone-950/90 backdrop-blur-xl border-b border-surface-container-high flex justify-between items-center px-6 md:px-12 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-10">
+<a class="text-2xl font-serif italic text-primary dark:text-amber-100" href="#">De Lolita</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="nav-link-active text-xs uppercase tracking-widest plus-jakarta pb-1" href="#">Menú</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-primary transition-colors duration-300 text-xs uppercase tracking-widest plus-jakarta pb-1" href="#">Tienda</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-primary transition-colors duration-300 text-xs uppercase tracking-widest plus-jakarta pb-1" href="#">Nosotros</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-primary transition-colors duration-300 text-xs uppercase tracking-widest plus-jakarta pb-1" href="#">Franquicias</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-primary transition-colors duration-300 text-xs uppercase tracking-widest plus-jakarta pb-1" href="#">Blog</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-1 text-primary hover:bg-surface-container p-2 rounded-full transition-colors" href="#" title="Ayuda y Contacto">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="hidden lg:inline text-xs font-bold uppercase tracking-wider">Ayuda</span>
+</a>
+<div class="h-6 w-px bg-outline-variant/30 hidden sm:block"></div>
+<span class="material-symbols-outlined text-primary dark:text-amber-500 cursor-pointer p-2 hover:bg-surface-container rounded-full transition-colors">language</span>
+<div class="relative group cursor-pointer p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-amber-500">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary text-on-primary text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative w-full h-[85vh] md:h-[90vh] flex items-center px-8 md:px-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Café atmosphere" class="w-full h-full object-cover" data-alt="atmospheric view of a sun-drenched artisan colombian cafe with steam rising from a latte and warm wooden textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvxlT9txqEiBss-7omo7X8fI74-a3hlfp0WMB5PSnIVoa49CQW2G7g54r5DdN0_BGuAvuMo_RzSoepW4u7J4eIIsQc8AJqykixSINmvd7FSzQEY2_TzUU84MTARokN13IiXki6DfM-RrgQjW_1dJM2nQ9FmkH5GERGfA22_I-hGyRH6GaVmctZYUC8_9ya2Sfrd8oylunz1iGB9rN5pBYv5qsENniPR5tdcL9DCvTEiQraTC4VMcxOw9xp9dxtK1J-j5Pjq0fM_e1R"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-2xl text-on-primary">
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tight mb-6">Nutrir Almas</h1>
+<p class="font-body text-xl md:text-2xl font-light opacity-90 mb-10 leading-relaxed">
+                    Tradición y amor en cada café y bocado desde 1999. Una invitación a pausar y sentir el alma de Colombia.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary-container text-on-primary px-10 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg active:scale-95">Explorar el Menú</button>
+<button class="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/30 px-10 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 active:scale-95">Pedir para Llevar</button>
+</div>
+</div>
+<!-- Visibility of System Status: Progress Indicator -->
+<div class="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-20">
+<div class="hero-progress h-full bg-primary shadow-[0_0_10px_rgba(113,68,40,1)]"></div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="py-10 bg-surface-container-low border-b border-surface-container-high flex overflow-x-auto whitespace-nowrap scrollbar-hide px-8 md:justify-center items-center gap-12">
+<div class="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">B Corp Certified</span>
+</div>
+<div class="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">ISO 9001</span>
+</div>
+<div class="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Desde 1999</span>
+</div>
+<div class="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">delivery_dining</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Domicilios Medellín</span>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary block mb-2">Selección del Mes</span>
+<h2 class="font-headline text-5xl font-bold">Los favoritos de nuestra casa</h2>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline group" href="#">
+                    Ver catálogo completo <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Feature: Café Especial -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-surface-container-lowest h-[500px] shadow-sm hover:shadow-xl transition-all">
+<img alt="Café Especial" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="close-up of freshly brewed colombian coffee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKvKbVfPsUZgCKr4Vog7jd-HYv5v9pc9zIN54-SSRFUM5K2tN_ngC2-tut6ozDACfYXOoW5lbwZSjEgVxtnpLKHKmER_w6aEL5qLnsvtlzCAbQRycnGTqfzF8dtB3NGPf0NLly5czgG9tC7MVRybAb5G1kCyFA3oevPUmEA29gwKXdoq9NyQ4vfFAPJkTH6nsiHL2QlxM0377gIJLT_dnuXPh3QgcNukNkNG71-LyBdXKY-VVdshlo89-GhikQ_LEx2YjQ-KVBMiE_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white pr-8">
+<h3 class="font-headline text-4xl mb-2">Café Especial</h3>
+<p class="mb-6 font-light opacity-80 max-w-md">Grano premium seleccionado de fincas antioqueñas. Notas de chocolate y frutos rojos.</p>
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold">$12.900</span>
+<!-- Efficiency: Quick Add -->
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-primary-container transition-colors shadow-lg active:scale-95">
+<span class="material-symbols-outlined text-xl">shopping_bag</span> Agregar al pedido
+                            </button>
+</div>
+</div>
+</div>
+<!-- Secondary: Panadería -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-surface-container-lowest h-[500px] shadow-sm hover:shadow-xl transition-all">
+<img alt="Panadería" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoO0jQi5ALPLUBrLwmh4WxrqRuH5erHpPU1-JZtk6o5piBqLrORumzvIAa7i8P1DlbaxE9eAF2k-ppv0VZtd3caA3JaQ6qIwfrshPN-aDrP9fN-w6Es8jN1uoXSEIpxP2rAzVtyeg1VTesut5M1UNGZR0v60NwrX4JH864aEJ51atnBv9rZ0BFgIsjqRpTiKHVHDgqq0WYzilierkccAQrOzSnq9NigVX1cP2dz1uc-EWJNMZNvOFOSmsUqm1liD4btOAOF7J1G08F"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white pr-4">
+<h3 class="font-headline text-3xl mb-2">Panadería</h3>
+<p class="mb-6 font-light opacity-80">Masa madre horneada al amanecer.</p>
+<div class="flex items-center gap-3">
+<span class="text-xl font-bold">$8.500</span>
+<button class="bg-white text-primary p-3 rounded-full hover:bg-primary-fixed transition-colors active:scale-95 shadow-lg" title="Añadir rápidamente">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Small Grid Items - Efficiency: Quick Add icons -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-surface-container h-[350px] shadow-sm">
+<img alt="Desayunos" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUur2UEuWrnZv6w_YH67uVsLIO4K8cKyBMCshStjqFhLkEhKj22KA_Toh5z_n4x5ySAyZ3C_IV42HcIdHkkslj_9ee6QQbq1riqgdzuHPqeTimYsGUjlIp4tuFe-fxeHCfTXRO8AGywrXM4Qkay-EeGltkDsEuMOOp1LUEksiqmAmUMHO_Vw7ZbFwEVQrI_jeVF-Opstcv5YnlWTXkPROL8Wj2BEhVNjJYQETogY_7Y4UtXf-xuFHmcjhJiNC9KIP7VP_T7x0WkcU"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4 text-white">
+<h3 class="font-headline text-2xl">Desayunos</h3>
+<div class="flex gap-2">
+<button class="bg-white text-primary px-4 py-2 rounded-full text-xs font-bold hover:bg-primary-fixed transition-all">Vista Rápida</button>
+<button class="bg-primary text-white p-2 rounded-full hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-surface-container h-[350px] shadow-sm">
+<img alt="Almuerzos" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCojI8uqMkVj-OlwynSfUERtFfzbbqxHWI16j2BEAoAH3SgJ0SMZuQMSd0nRWxlkSIt2YXx5m_bOjMHLNeqCnxeqJuY5AGBJUWGk_aZjvDqNER7bG57Nssfsx0BvVkesISM0mw8vcQqYihulGseaZCzFkkqgdEgQijt1aKObP6zTMz6gzIGk8W-g6HsjMlxlgUB3AT3YNCojVohNxBG0D5nicS6ooaXKoTS5UVmeLXALXxCidK_dVvGLiCzFkhNjZKNlsX0SfPGC35x"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4 text-white">
+<h3 class="font-headline text-2xl">Almuerzos</h3>
+<div class="flex gap-2">
+<button class="bg-white text-primary px-4 py-2 rounded-full text-xs font-bold hover:bg-primary-fixed transition-all">Vista Rápida</button>
+<button class="bg-primary text-white p-2 rounded-full hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-surface-container h-[350px] shadow-sm">
+<img alt="Pastelería" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj7DldkmcvqVGX3py-VpIFEMFxH3bjSUsBBj8Je0-agz4NaN45zQS7ln67D5vGREW0fFoGI75mSr5UFppAydJMUeqFgK3h7gn_Hdmi7Ynw7NNvTsmxht5ZssuZ3LA9bdugiVOtL3r8EVHtgzOhDDFpdDkibE-ShoqSgQ1CHpJgBaJZN_igTndMyG40agzpdNjdQLdNGc4QAT7tmCzS0akCfNsP0etQbtGbpOhbhKZ8JxR3J66K7Ns1eR6y01heQDubWM-SlK7y7rvm"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4 text-white">
+<h3 class="font-headline text-2xl">Pastelería</h3>
+<div class="flex gap-2">
+<button class="bg-white text-primary px-4 py-2 rounded-full text-xs font-bold hover:bg-primary-fixed transition-all">Vista Rápida</button>
+<button class="bg-primary text-white p-2 rounded-full hover:bg-primary-container transition-all"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Online Store Featured -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 items-center gap-16">
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-48 h-48 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<img alt="Alfajores Box" class="relative z-10 w-full rounded-2xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdUDurLel3febEsFkPh3joJpFrsXxGLIMvYm-FnbyeU3fARo6RX23zM00E8fhtoKWGfyC_cv9JcIcj6B9sAA9cvHQSD43629OYnIEV5UCZT5z8x22YqWG6jI5lesyu9XHPELVxy-eil5lZ7106u5moBEpPFYQCanpJA040W6on34ycqOVt5YVVC1nQOJeMrBBk0txa1KqdnhjAuLYYjLcjc64qogaXI1RikvR5Y5ITxe8mVmat7zSh8ethNH4QVhYrjdHBBxilWChe"/>
+</div>
+<div>
+<span class="inline-block px-4 py-1 rounded-full bg-primary text-on-primary font-label text-[10px] uppercase tracking-widest mb-6">Regalo de Edición Limitada</span>
+<h2 class="font-headline text-5xl font-bold mb-6 text-primary leading-tight">Caja de Alfajores Signature</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Receta secreta transmitida por Lolita: suaves galletas rellenas de dulce de leche artesanal. Empacadas a mano para regalar o consentirte.
+                    </p>
+<div class="flex items-baseline gap-4 mb-10">
+<span class="text-5xl font-bold text-on-surface">$45.000</span>
+<span class="text-on-surface-variant line-through text-xl">$55.000</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex-1 bg-primary hover:bg-primary-container text-on-primary px-12 py-5 rounded-full font-bold transition-all shadow-lg hover:-translate-y-1 active:scale-95">Comprar Ahora</button>
+<button class="flex-1 border border-outline hover:bg-surface-container-high text-primary px-12 py-5 rounded-full font-bold transition-all active:scale-95">Ver Detalles</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Story -->
+<section class="py-32 px-8 overflow-hidden bg-white">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+<div class="order-2 md:order-1">
+<h2 class="font-headline text-5xl font-bold mb-8 italic">El Alma de Lolita</h2>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed mb-6">
+                        Todo comenzó con Lolita, cuya cocina era el corazón de nuestra familia. Su misión era simple pero poderosa: <span class="text-primary italic">Nutrir Almas</span>.
+                    </p>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-10">
+                        Hoy, mantenemos vivo ese legado como <span class="font-bold">B Corp Certificada</span>, cuidando desde el origen del grano hasta la calidez de nuestras sedes.
+                    </p>
+<div class="grid grid-cols-2 gap-12 border-t border-surface-container-high pt-10">
+<div class="flex flex-col">
+<span class="text-4xl font-headline text-primary font-bold mb-1">25+</span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-label font-bold text-on-surface-variant">Años de Tradición</span>
+</div>
+<div class="flex flex-col">
+<span class="text-4xl font-headline text-primary font-bold mb-1">100%</span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-label font-bold text-on-surface-variant">Impacto Social</span>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-700">
+<img alt="Lolita's Legacy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-09-Dxm1Bi8otgY8Too6vYmdeUeRgoIVM5Bjf00LiHc_ePimn2810KZTlWwubUyAeOi2aCrfe-iY_jzhjRZ9JHh4rCcJZySy1TuQKszDvLdRi9B-pMPBbB9KqTmYFzA4kSXQjYsoLgH7k_yq_laxmrE0AfAEgK2wXGd4Kxwh8E15_TFgEDNroAPoGgnf2JzyYoQvq7aGWUq1kwY7qjQYI7q8V8hADFe6PJdRHQj-YubVjHBaF3EWyJu7KWY5Vb2O6H6fW0ENU5md6"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Locations -->
+<section class="py-24 bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="font-headline text-5xl font-bold mb-4">Nuestras Casas</h2>
+<p class="font-body text-on-surface-variant text-lg">Encuentra tu rincón favorito en Medellín</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Location Card -->
+<div class="bg-white p-8 rounded-2xl hover:shadow-2xl transition-all group">
+<h3 class="font-headline text-2xl mb-4 text-primary group-hover:translate-x-1 transition-transform inline-block">Sede El Poblado</h3>
+<p class="text-on-surface-variant mb-8 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            Carrera 43A # 5-12, Medellín
+                        </p>
+<div class="space-y-3 mb-10 text-sm">
+<div class="flex justify-between border-b border-stone-50 pb-2">
+<span class="font-medium opacity-60">Lun - Sáb:</span>
+<span>7:00 AM - 9:00 PM</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium opacity-60">Dom &amp; Fes:</span>
+<span>8:00 AM - 8:00 PM</span>
+</div>
+</div>
+<button class="w-full border border-outline hover:bg-primary hover:text-white hover:border-primary py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">directions</span> Ver en el Mapa
+                        </button>
+</div>
+<!-- Location Card -->
+<div class="bg-white p-8 rounded-2xl hover:shadow-2xl transition-all group">
+<h3 class="font-headline text-2xl mb-4 text-primary group-hover:translate-x-1 transition-transform inline-block">Sede Laureles</h3>
+<p class="text-on-surface-variant mb-8 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            Circular 4 # 73-10, Medellín
+                        </p>
+<div class="space-y-3 mb-10 text-sm">
+<div class="flex justify-between border-b border-stone-50 pb-2">
+<span class="font-medium opacity-60">Lun - Sáb:</span>
+<span>7:30 AM - 8:30 PM</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium opacity-60">Dom &amp; Fes:</span>
+<span>9:00 AM - 7:00 PM</span>
+</div>
+</div>
+<button class="w-full border border-outline hover:bg-primary hover:text-white hover:border-primary py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">directions</span> Ver en el Mapa
+                        </button>
+</div>
+<!-- Location Card -->
+<div class="bg-white p-8 rounded-2xl hover:shadow-2xl transition-all group">
+<h3 class="font-headline text-2xl mb-4 text-primary group-hover:translate-x-1 transition-transform inline-block">Sede Envigado</h3>
+<p class="text-on-surface-variant mb-8 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            Calle 38 Sur # 43-25, Envigado
+                        </p>
+<div class="space-y-3 mb-10 text-sm">
+<div class="flex justify-between border-b border-stone-50 pb-2">
+<span class="font-medium opacity-60">Lun - Sáb:</span>
+<span>7:00 AM - 9:00 PM</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium opacity-60">Dom &amp; Fes:</span>
+<span>8:00 AM - 8:00 PM</span>
+</div>
+</div>
+<button class="w-full border border-outline hover:bg-primary hover:text-white hover:border-primary py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">directions</span> Ver en el Mapa
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter & Error/Success States -->
+<section class="py-24 px-8 max-w-4xl mx-auto text-center">
+<h2 class="font-headline text-4xl font-bold mb-4">Únete a nuestra mesa</h2>
+<p class="font-body text-on-surface-variant mb-10">Suscríbete y recibe un 10% de descuento en tu primer pedido online.</p>
+<form class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden'); this.classList.add('hidden')">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1 relative">
+<input class="w-full px-8 py-5 rounded-full bg-surface-container-high border-2 border-transparent focus:border-primary focus:ring-0 transition-all text-on-surface" placeholder="tu@email.com" required="" title="Por favor ingresa un correo electrónico válido" type="email"/>
+<!-- Error Prevention: Tooltip hint -->
+<span class="absolute -top-6 left-6 text-[10px] text-stone-400 font-bold uppercase tracking-widest">Usamos tu email para enviarte beneficios</span>
+</div>
+<button class="bg-primary text-on-primary px-12 py-5 rounded-full font-bold hover:bg-primary-container transition-all shadow-lg active:scale-95" type="submit">¡Quiero mi descuento!</button>
+</div>
+<p class="text-[11px] text-stone-500">Al suscribirte, aceptas nuestras <a class="underline" href="#">políticas de privacidad</a>.</p>
+</form>
+<!-- Help Users: Success Message -->
+<div class="hidden bg-primary/10 border border-primary/20 p-8 rounded-2xl animate-pulse" id="success-msg">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">check_circle</span>
+<h3 class="font-headline text-2xl text-primary font-bold mb-2">¡Bienvenido a la familia!</h3>
+<p class="text-on-surface-variant">Revisa tu correo, ya te enviamos tu código de descuento.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] bg-stone-100 dark:bg-stone-900 border-t border-surface-container-high">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<a class="text-3xl font-serif italic text-primary dark:text-amber-100 mb-6 block" href="#">De Lolita</a>
+<p class="text-stone-500 dark:text-stone-400 font-body text-sm leading-relaxed mb-6">
+                    Nutriendo almas a través de la panadería artesanal y el café de especialidad. Empresa B Certificada.
+                </p>
+<div class="flex gap-4">
+<a class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label text-[10px] uppercase tracking-widest font-bold mb-6 text-primary">Navegación</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Menú del día</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Nuestra Tienda</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Nuestra Historia</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Sedes y Horarios</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-[10px] uppercase tracking-widest font-bold mb-6 text-primary">Centro de Ayuda</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Estado de Pedido</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Contacto Directo</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 hover:text-primary transition-colors block text-sm" href="#">Trabaja con Nosotros</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-[10px] uppercase tracking-widest font-bold mb-6 text-primary">Inspiración</h4>
+<p class="text-stone-500 dark:text-stone-400 text-xs mb-4">Recibe recetas y noticias en tu bandeja.</p>
+<div class="relative group">
+<input class="w-full bg-transparent border-b-2 border-stone-300 dark:border-stone-700 py-2 text-sm focus:ring-0 focus:border-primary outline-none transition-colors" placeholder="Email" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-primary hover:translate-x-1 transition-transform"><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="px-12 pb-8 max-w-7xl mx-auto text-center text-[10px] text-stone-400 uppercase tracking-[0.2em]">
+            © 2024 De Lolita Café - Todos los derechos reservados.
+        </div>
+</footer>
+<!-- User Control: WhatsApp Button -->
+<div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4 items-end group">
+<div class="bg-white px-4 py-2 rounded-lg shadow-xl text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity mb-2 pointer-events-none border border-surface-container-high">
+            ¿Necesitas ayuda? Chatea con nosotros
+        </div>
+<a class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all" href="#" title="Hablar por WhatsApp">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</a>
+</div>
+<!-- Exit Intent: Error Recovery/Promotion -->
+<div class="hidden fixed inset-0 z-[200] bg-black/60 backdrop-blur-sm items-center justify-center p-8" id="exit-intent">
+<div class="bg-white p-12 rounded-2xl max-w-lg relative animate-in fade-in zoom-in duration-300">
+<button class="absolute top-4 right-4 p-2 hover:bg-stone-100 rounded-full transition-colors" onclick="document.getElementById('exit-intent').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">shopping_basket</span>
+<h2 class="font-headline text-3xl mb-4">¿Te vas sin tu dosis de alma?</h2>
+<p class="mb-8 text-on-surface-variant leading-relaxed text-lg">No te vayas sin probar nuestros alfajores. Usa el código <span class="font-bold text-primary bg-primary/10 px-2 py-1 rounded">LOLITA10</span> para un descuento exclusivo en tu primera compra online.</p>
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-bold shadow-lg hover:bg-primary-container transition-all active:scale-95">¡Lo quiero!</button>
+<button class="mt-6 text-stone-400 text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors" onclick="document.getElementById('exit-intent').classList.add('hidden')">Tal vez después</button>
+</div>
+</div>
+</div>
+<script>
+        // Simple logic for Nav highlighting
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('nav a').forEach(l => l.classList.remove('nav-link-active'));
+                this.classList.add('nav-link-active');
+            });
+        });
+    </script>
+</body></html>
