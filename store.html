@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es-CO"><head>
+<meta charset="utf-8"/>
+<title>De Lolita Café — Tienda Online</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fff8ef",
+                    "outline": "#84746c",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#fbf3e4",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#d6c3b9",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f8f0e1",
+                    "on-secondary-fixed-variant": "#574144",
+                    "on-secondary-container": "#755d5f",
+                    "on-primary-container": "#ffe0d1",
+                    "surface-dim": "#e1d9cb",
+                    "on-surface": "#1e1b13",
+                    "on-primary-fixed": "#331200",
+                    "secondary-fixed": "#fbdbde",
+                    "on-background": "#1e1b13",
+                    "tertiary-container": "#7d605b",
+                    "surface-container": "#f5edde",
+                    "on-secondary-fixed": "#281719",
+                    "primary-container": "#8d5b3e",
+                    "error-container": "#ffdad6",
+                    "surface": "#fff8ef",
+                    "inverse-surface": "#343026",
+                    "secondary-container": "#f8d8db",
+                    "on-surface-variant": "#51443d",
+                    "surface-bright": "#fff8ef",
+                    "on-tertiary-fixed": "#2b1613",
+                    "secondary-fixed-dim": "#debfc2",
+                    "inverse-primary": "#f8b895",
+                    "on-tertiary-container": "#ffdfd9",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdbc9",
+                    "error": "#ba1a1a",
+                    "primary": "#714428",
+                    "on-primary-fixed-variant": "#683c21",
+                    "surface-container-high": "#efe7d9",
+                    "tertiary": "#634844",
+                    "surface-container-highest": "#e9e2d3",
+                    "secondary": "#70585b",
+                    "tertiary-fixed-dim": "#e3beb8",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e9e2d3",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdad4",
+                    "surface-tint": "#835336",
+                    "primary-fixed-dim": "#f8b895",
+                    "on-tertiary-fixed-variant": "#5b403c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fff8ef; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8ef]/80 dark:bg-stone-950/80 backdrop-blur-xl transition-all duration-300 border-b border-outline-variant/10">
+<nav class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-serif italic text-[#714428] dark:text-[#d7ccc8] flex items-center gap-2">
+            <a href="index.html">De Lolita Café</a>
+        </div>
+<div class="hidden lg:flex items-center gap-10">
+<a class="text-[#714428] dark:text-[#fbf3e4] border-b-2 border-[#714428] dark:border-[#8d5b3e] pb-1 font-label text-sm uppercase tracking-widest font-medium" href="#">Menu</a>
+<a class="text-[#714428]/70 dark:text-stone-400 hover:text-[#714428] dark:hover:text-stone-100 transition-colors duration-300 font-label text-sm uppercase tracking-widest font-medium" href="#">Gifts</a>
+<a class="text-[#714428]/70 dark:text-stone-400 hover:text-[#714428] dark:hover:text-stone-100 transition-colors duration-300 font-label text-sm uppercase tracking-widest font-medium" href="#">Community</a>
+<a class="text-[#714428]/70 dark:text-stone-400 hover:text-[#714428] dark:hover:text-stone-100 transition-colors duration-300 font-label text-sm uppercase tracking-widest font-medium" href="#">Story</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-48 focus:ring-2 focus:ring-primary/20 focus:w-64 transition-all duration-300" placeholder="Buscar delicias..." type="text"/>
+</div>
+<button class="relative material-symbols-outlined text-[#714428] hover:bg-[#8d5b3e]/5 p-2 rounded-full transition-all active:scale-95" title="Ver carrito">
+                shopping_cart
+                <span class="absolute top-1 right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+<button class="material-symbols-outlined text-[#714428] hover:bg-[#8d5b3e]/5 p-2 rounded-full transition-all active:scale-95" title="Mi cuenta">account_circle</button>
+</div>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Breadcrumbs & Search (Mobile) -->
+<div class="px-6 md:px-12 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<nav aria-label="Breadcrumb" class="flex items-center text-xs font-label uppercase tracking-widest text-on-surface-variant/60">
+<a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+<span class="mx-2 font-serif">/</span>
+<span class="text-on-surface font-semibold">Tienda</span>
+</nav>
+<div class="md:hidden">
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 px-4 text-sm" placeholder="Buscar..." type="text"/>
+</div>
+</div>
+<!-- Catalog Hero Section -->
+<section class="px-6 md:px-12 pb-12">
+<div class="relative overflow-hidden rounded-xl h-[260px] flex items-center justify-center text-center p-8 bg-gradient-to-r from-primary/10 to-primary-container/20">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20" data-alt="Warm atmospheric bakery background with soft flour dusting and golden morning light through a window, cinematic and artisanal" src="https://media-cdn.tripadvisor.com/media/photo-o/11/87/a2/d2/el-ambiente-es-muy-agradable.jpg"/>
+</div>
+<div class="relative z-10 max-w-2xl">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block">Oasis en Línea</span>
+<h1 class="font-headline text-4xl md:text-5xl font-bold text-on-primary-fixed mb-4">Nuestra Tienda Online</h1>
+<p class="font-body text-lg text-on-surface-variant italic">Nutrir Almas desde la comodidad de tu hogar</p>
+</div>
+</div>
+</section>
+<!-- Product Control Bar (Filters & Sorting) -->
+<section class="px-6 md:px-12 py-4 border-y border-outline-variant/10 sticky top-[73px] bg-background/95 backdrop-blur z-40">
+<div class="flex flex-col lg:flex-row gap-6 items-center justify-between">
+<div class="flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide w-full lg:w-auto pb-2 lg:pb-0">
+<button class="group flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-on-primary font-medium text-sm transition-all shadow-sm">
+                    Todos
+                    <span class="material-symbols-outlined text-sm hidden group-hover:block">close</span>
+</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-sm font-medium border border-outline-variant/20">Hojaldres</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-sm font-medium border border-outline-variant/20">Alfajores</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-sm font-medium border border-outline-variant/20">Desayunos</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-sm font-medium border border-outline-variant/20">Almuerzos</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-sm font-medium border border-outline-variant/20">Regalos</button>
+</div>
+<div class="flex gap-4 items-center w-full lg:w-auto justify-between lg:justify-end">
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="animate-pulse w-2 h-2 bg-primary rounded-full"></span>
+                    Actualizando lista...
+                </div>
+<div class="flex gap-2">
+<select class="bg-surface-container-low border-outline-variant/20 rounded-full px-4 py-2 text-xs font-label uppercase tracking-widest focus:ring-primary/20">
+<option>Ordenar por</option>
+<option>Precio: Menor a Mayor</option>
+<option>Precio: Mayor a Menor</option>
+<option>Más Populares</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-6 md:px-12 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Product Card 1 -->
+<div class="group flex flex-col h-full">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-5 relative cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant wooden box filled with artisan alfajores dusted with powdered sugar, warm natural lighting, high-end food photography" src="https://media-cdn.tripadvisor.com/media/photo-o/0f/2d/8a/3d/delicioso-rollo-de-canela.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-on-primary px-3 py-1 rounded-full text-[10px] font-bold font-label uppercase tracking-widest backdrop-blur-sm">Bestseller</span>
+</div>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline text-xl text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors cursor-pointer">Caja de Alfajores Signature</h3>
+<p class="font-body text-sm text-on-surface-variant mb-3">Artesanales, rellenos de dulce de leche.</p>
+<div class="flex items-center justify-between mb-6">
+<span class="font-body text-xl font-bold text-on-surface">$45.900 COP</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Hechos con alma</span>
+</div>
+</div>
+<button class="w-full py-3.5 rounded-full bg-primary text-on-primary font-bold transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+                    Añadir al carrito
+                </button>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col h-full">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-5 relative cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a golden flaky pastry filled with ham and melted cheese, artisanal textures and steam rising, warm wood background" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/d6/f9/08/tostadas-francesas-acompanadas.jpg?w=1200&h=800&s=1"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline text-xl text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors cursor-pointer">Hojaldre de Jamón y Queso</h3>
+<p class="font-body text-sm text-on-surface-variant mb-3">Masa hojaldrada crujiente recién horneada.</p>
+<div class="flex items-center justify-between mb-6">
+<span class="font-body text-xl font-bold text-on-surface">$8.500 COP</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Favorito local</span>
+</div>
+</div>
+<button class="w-full py-3.5 rounded-full bg-secondary-container text-on-secondary-container font-bold transition-all duration-300 hover:bg-secondary hover:text-on-secondary active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+                    Añadir al carrito
+                </button>
+</div>
+<!-- Coming Soon Card (Error Prevention) -->
+<div class="group flex flex-col h-full opacity-80">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low mb-5 relative flex items-center justify-center border-2 border-dashed border-outline-variant/30">
+<div class="text-center p-8">
+<span class="material-symbols-outlined text-5xl text-primary/40 mb-4">auto_awesome</span>
+<h3 class="font-headline text-2xl text-on-surface font-bold mb-2">Próximamente</h3>
+<p class="font-body text-sm text-on-surface-variant">Nuevos sabores están por llegar.</p>
+</div>
+<div class="absolute inset-0 bg-surface-container/20"></div>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline text-xl text-on-surface-variant font-semibold mb-1">Caja Especial Temporada</h3>
+<p class="font-body text-sm text-on-surface-variant mb-3">Disponible próximamente para fechas especiales.</p>
+<div class="flex items-center justify-between mb-6">
+<span class="font-body text-xl font-bold text-on-surface-variant">---</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Novedad</span>
+</div>
+</div>
+<button class="w-full py-3.5 rounded-full border-2 border-primary text-primary font-bold transition-all duration-300 hover:bg-primary hover:text-on-primary active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">notifications</span>
+                    Notificarme al llegar
+                </button>
+</div>
+</div>
+</section>
+<!-- Recently Viewed (Recognition rather than recall) -->
+<section class="px-6 md:px-12 py-12 bg-surface-container-lowest/30">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-2xl text-on-surface">Vistos recientemente</h2>
+<a class="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline" href="#">Ver todo</a>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+<div class="min-w-[140px] md:min-w-[180px]">
+<div class="aspect-square rounded-lg bg-surface-container-low mb-3 overflow-hidden">
+<img alt="Café" class="w-full h-full object-cover" src="https://media-cdn.tripadvisor.com/media/photo-o/1c/32/a9/af/my-hot-and-delicious.jpg"/>
+</div>
+<p class="font-body text-xs font-bold text-on-surface line-clamp-1">Café Especialidad</p>
+<p class="font-body text-xs text-primary">$32.000</p>
+</div>
+<div class="min-w-[140px] md:min-w-[180px]">
+<div class="aspect-square rounded-lg bg-surface-container-low mb-3 overflow-hidden">
+<img alt="Regalo" class="w-full h-full object-cover" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/d6/f8/fd/biscochuelo-de-chocolate.jpg?w=1200&h=800&s=1"/>
+</div>
+<p class="font-body text-xs font-bold text-on-surface line-clamp-1">Caja Regalo Lolita</p>
+<p class="font-body text-xs text-primary">$89.900</p>
+</div>
+</div>
+</section>
+<!-- Help and Documentation (Heuristic 10) -->
+<section class="px-6 md:px-12 py-20 bg-surface-container-low/40">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-surface-container-highest/50 backdrop-blur-md p-10 rounded-xl border border-outline-variant/10">
+<h2 class="font-headline text-3xl text-on-primary-fixed mb-4">Comunidad De Lolita</h2>
+<p class="font-body text-on-surface-variant mb-6">Recibe historias desde el corazón de Colombia y beneficios exclusivos.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="bg-surface-container-lowest border-none rounded-full px-6 py-3 flex-1 focus:ring-2 focus:ring-primary/20 text-on-surface text-sm" placeholder="Tu correo electrónico" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold transition-all hover:bg-on-primary-fixed-variant active:scale-95 text-sm">Suscribirse</button>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-6 p-4">
+<h3 class="font-headline text-xl text-on-surface">¿Necesitas ayuda?</h3>
+<div class="grid grid-cols-2 gap-4">
+<a class="flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white transition-colors border border-outline-variant/10" href="#">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<span class="text-sm font-medium">Políticas de Envío</span>
+</a>
+<a class="flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white transition-colors border border-outline-variant/10" href="#">
+<span class="material-symbols-outlined text-primary">help</span>
+<span class="text-sm font-medium">Preguntas Frecuentes</span>
+</a>
+<a class="flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white transition-colors border border-outline-variant/10" href="#">
+<span class="material-symbols-outlined text-primary">description</span>
+<span class="text-sm font-medium">Términos Legales</span>
+</a>
+<a class="flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white transition-colors border border-outline-variant/10" href="#">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+<span class="text-sm font-medium">Soporte Chat</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] bg-[#fbf3e4] dark:bg-stone-900 text-[#714428] dark:text-[#d7ccc8] font-label text-sm tracking-tight border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8">
+<div class="text-xl font-serif text-[#331200] dark:text-[#fbf3e4]">
+            De Lolita Café
+        </div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-[#714428]/60 dark:text-stone-400 hover:text-primary transition-all" href="#">Sustainability</a>
+<a class="text-[#714428]/60 dark:text-stone-400 hover:text-primary transition-all" href="#">Locate Us</a>
+<a class="text-[#714428]/60 dark:text-stone-400 hover:text-primary transition-all" href="#">Contact</a>
+<a class="text-[#714428]/60 dark:text-stone-400 hover:text-primary transition-all" href="#">Shipping Policies</a>
+</div>
+<div class="text-[#714428]/70 dark:text-stone-500 italic text-center md:text-right">
+            © 2024 De Lolita Café. Crafted with Soul in Colombia.
+        </div>
+</div>
+</footer>
+</body></html>
